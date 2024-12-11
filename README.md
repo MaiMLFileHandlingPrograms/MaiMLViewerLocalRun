@@ -1,5 +1,5 @@
 # MaiMLViewerLocalRun
-# ローカル環境でdockerを使わずに動かす開発＆実行環境の構築
+# ローカル環境でdockerを使わずにMaiMLViewerを開発＆実行する環境の構築
 
 ## 構成
 #### A: xmail-viewer(アプリケーションサーバー)
