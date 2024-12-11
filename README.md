@@ -71,13 +71,13 @@
     　> ./neo4j stop
 ***
 ### C: DBにアクセスする一部を担うpythonスクリプト
-    自分の環境に合わせてpython3をインストールする
-    また、下記のパッケージをインストールする
+  #### C-1 自分の環境に合わせてpython3をインストール
+  #### C-2 下記のパッケージをインストール
     　neo4j==4.4、lxml==5.0.0、cryptography==3.3.2、signxml==2.10.1
 </br>
 </br>
 
-## アプリケーションを実行する
+## MaiMLViewer アプリケーションを実行する
 ### 1: 環境変数を設定する
     export NEO4J_HOME=/usr/local/neo4j
     export PATH=$PATH:$NEO4J_HOME/bin
