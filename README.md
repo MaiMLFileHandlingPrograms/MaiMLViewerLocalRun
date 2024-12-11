@@ -78,10 +78,10 @@
 </br>
 
 ## MaiMLViewer アプリケーションを実行する
-### 1: 環境変数を設定する
-    export NEO4J_HOME=/usr/local/neo4j
-    export PATH=$PATH:$NEO4J_HOME/bin
-    export MAIML_TMP_DIR=/user/local/MaiMLViewerLocalRun/xmail-viewer/models/tmp
+### 1: 環境変数を設定する（下記は実行時にのみ設定する場合）
+    export(poweshellの場合set) NEO4J_HOME=/usr/local/neo4j
+    export(poweshellの場合set) PATH=$PATH:$NEO4J_HOME/bin
+    export(poweshellの場合set) MAIML_TMP_DIR=/user/local/MaiMLViewerLocalRun/xmail-viewer/models/tmp
 ### 2: neo4jの設定&起動
     neo4j.confの設定を変更する
     場所：/user/local/neo4j/conf/neo4j.conf
