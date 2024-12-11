@@ -54,7 +54,7 @@
     　JAVA_HOME=インストールしたディレクトリ
     　PATH=$JAVA_HOME/bin:$PATH
   #### B-2 neo4j 4.4をインストール
-    　公式サイトからneo4j 4.4-community版をダウンロード
+    　公式サイト(https://neo4j.com/deployment-center/#enterprise)からneo4j 4.4-community版をダウンロード
     　ダウンロードしたneo4j-community-4.4.xx-unix.tar.gzを解凍し、
     　任意のディレクトリ（例えば、/user/local/neo4j/）におく
   #### B-3 neo4jを起動
