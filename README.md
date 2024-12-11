@@ -25,7 +25,7 @@
 
 ## 環境構築
 ### 準備: GitHubからコード一式をローカル環境にダウンロードする
-    例として、ディレクトリを"/user/local/MaiMLViewerLocalRun/"とする
+    例として、ローカル環境のディレクトリを"/user/local/MaiMLViewerLocalRun/"とする
 ***
 ### A: xmail-viewer(アプリケーションサーバー)
   #### A-1 nodeをインストール
