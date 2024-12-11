@@ -61,7 +61,7 @@
 	　> ./neo4j console　もしくは　> ./neo4j start
 		Starting Neo4j.
 		Started neo4j (pid:14213). It is available at http://localhost:7474
-  #### B-4　webブラウザで"http://localhost:7474"にアクセス
+  #### B-4　webブラウザで "http://localhost:7474" にアクセス
     　start画面が出たらOK
   #### B-5 neo4jを停止
     　下記コマンドを実行
