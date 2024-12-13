@@ -30,7 +30,7 @@
     　> npm install
     　  →"/*ANATANODIRECTORY*/MaiMLViewerLocalRun/xmail-viewer/node_modules/"が作成される
   #### A-3　nodeを起動
-    　・下記コマンドを実行し、wwwファイルの設定内容でnodeを立ち上げる
+    　・下記コマンドを実行し、nodeでwwwファイルを起動
 	　> cd /*ANATANODIRECTORY*/MaiMLViewerLocalRun/xmail-viewer/
 	　> node /bin/www
   #### A-4 webブラウザで "http://localhost:3000/" にアクセス
@@ -93,3 +93,33 @@
 ### 4: webブラウザでアプリケーションにアクセス
     ・URL："http://localhost:3000/"にアクセスする
     ・MaiMLViewerのリスト画面が表示される
+
+</br>
+</br>
+<br/>
+
+## まとめ
+### 1. インストールするもの
+#### 1-1. node, npm, nodeのモジュール
+#### 1-2. python3, pythonのパッケージ
+#### 1-3. openjdk 11, neo4j4.4
+<br/>
+
+### 2. 設定するもの
+#### 2-1. neo4j.confを修正
+        dbms.security.auth_enabled=false
+        dbms.connector.bolt.enabled=true
+        dbms.connector.http.enabled=true
+#### 2-2. 環境変数を設定
+        JAVA_HOME, NEO4J_HOME, MAIML_TMP_DIR
+#### 2-3. pathを通す
+        node, npm, java, neo4j, python
+<br/>
+
+### 3. アプリケーション実行方法
+#### 3-1. neo4jを起動
+#### 3-2. nodeで /MaiMLViewerLocalRun/xmail-viewer/bin/www を実行
+#### 3-3. webブラウザで "http://localhost:3000/" にアクセス
+
+
+
