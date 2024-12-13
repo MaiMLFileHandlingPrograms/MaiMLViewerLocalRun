@@ -1,77 +1,72 @@
 # MaiMLViewerLocalRun
 # ローカル環境でdockerを使わずにMaiMLViewerを開発＆実行する環境の構築
 
-## 構成
+## 構成とインストールが必要なもの
 #### A: xmail-viewer(アプリケーションサーバー)
-    node.js
+    node.js, node modules(package.json,package-lock.json)
 #### B: graph-db(DBサーバー)
-    neo4j 4.4
+    openjdk 11, neo4j 4.4
 #### C: DBにアクセスする一部を担うpythonスクリプト
-    python3
+    python3, python Packages(neo4j==4.4,lxml==5.0.0,cryptography==3.3.2,signxml==2.10.1)
 
 </br>
 </br>
 
-## インストールするもの
-#### A: xmail-viewer(アプリケーションサーバー)
-      node.js, node-modules(package.json,package-lock.json)
-#### B: graph-db(DBサーバー)
-      openjdk 11, neo4j 4.4
-#### C: DBにアクセスする一部を担うpythonスクリプト
-      pythonの最新版, python Packages(neo4j==4.4,lxml==5.0.0,cryptography==3.3.2,signxml==2.10.1)
-
-</br>
-</br>
-
-## 環境構築
-### 準備: GitHubからコード一式をローカル環境にダウンロードする
-    例として、ローカル環境のディレクトリを"/user/local/MaiMLViewerLocalRun/"とする
+## 環境構築手順
+### 準備: GitHubからコード一式をローカル環境にダウンロード
+    例として、ローカル環境のディレクトリを"/*ANATANODIRECTORY*/MaiMLViewerLocalRun/"とする
 ***
 ### A: xmail-viewer(アプリケーションサーバー)
   #### A-1 nodeをインストール
-    　公式サイト(https://nodejs.org/)からダウンロードしてインストール
-    　nodeとnpmがインストールされる
-      node、npmの実行ファイルにPATHが通っていなければそれぞれPATHを通す
+    　・公式サイト(https://nodejs.org/)からダウンロードしてインストールする
+    　・nodeとnpmがインストールされる
+      ・nodeとnpmの実行ファイルにPATHが通っていなければそれぞれPATHを通す
   #### A-2 関連モジュールをインストール
-    　"/user/local/MaiMLViewerLocalRun/xmail-viewer/"ディレクトリに、package.json、package-lock.jsonの２つのファイルが存在する
+    　・"/user/local/MaiMLViewerLocalRun/xmail-viewer/"ディレクトリに、
+     　package.json、package-lock.jsonの２つのファイルが存在する
     　
-     下記コマンドを実行し、package.json、package-lock.jsonで指定したモジュールをインストールする
-    　> cd /user/local/MaiMLViewerLocalRun/xmail-viewer/
+     ・下記コマンドを実行し、package.json、package-lock.jsonで指定したモジュールをインストールする
+    　> cd /*ANATANODIRECTORY*/MaiMLViewerLocalRun/xmail-viewer/
     　> npm install
-    　  →"/user/local/MaiMLViewerLocalRun/xmail-viewer/node_modules/"が作成される
+    　  →"/*ANATANODIRECTORY*/MaiMLViewerLocalRun/xmail-viewer/node_modules/"が作成される
   #### A-3　nodeを起動
-    　下記コマンドを実行し、wwwファイルの設定内容でnodeを立ち上げる
-	　> cd /user/local/MaiMLViewerLocalRun/xmail-viewer/
+    　・下記コマンドを実行し、wwwファイルの設定内容でnodeを立ち上げる
+	　> cd /*ANATANODIRECTORY*/MaiMLViewerLocalRun/xmail-viewer/
 	　> node /bin/www
   #### A-4 webブラウザで "http://localhost:3000/" にアクセス
-    　接続できていればエラーになっていてもOK
+    　・接続できていればエラーになっていてもOK
   #### A-5 nodeを停止
 	　Ctl+c
 ***
 ### B: graph-db(DBサーバー) 
 下記をそれぞれ自分の環境に合わせてインストール、実行する
   #### B-1 JDK 11をインストール
-    　それぞれの環境に合わせて、openjdk11.x.xxをインストールし、２つの環境変数を追加
-    　JAVA_HOME=インストールしたディレクトリ
-    　PATH=$JAVA_HOME/bin:$PATH
+    　・それぞれの環境に合わせて、openjdk11.x.xxをインストールし、２つの環境変数を追加する
+    　　　JAVA_HOME=インストールしたディレクトリ（例：/*ANATANODIRECTORY*/openjdk@11/libexec/openjdk.jdk/Contents/Home）
+    　　　PATH=$JAVA_HOME/bin:$PATH
   #### B-2 neo4j 4.4をインストール
-    　公式サイト(https://neo4j.com/deployment-center/#enterprise)からneo4j 4.4-community版をダウンロード
-    　ダウンロードしたneo4j-community-4.4.xx-unix.tar.gzを解凍し、
-    　任意のディレクトリ（例えば、/user/local/neo4j/）におく
+    　・公式サイト(https://neo4j.com/deployment-center/#enterprise)からneo4j 4.4-community版をダウンロードする
+    　・ダウンロードしたneo4j-community-4.4.xx-unix.tar.gzを解凍し、
+    　　任意のディレクトリ（例えば、/*ANATANODIRECTORY*/neo4j/）におく
   #### B-3 neo4jを起動
-    　下記コマンドを実行
-	　> cd /user/local/neo4j/bin/
+    　・下記コマンドを実行する
+	　> cd /*ANATANODIRECTORY*/neo4j/bin/
 	　> ./neo4j console　もしくは　> ./neo4j start
 		Starting Neo4j.
 		Started neo4j (pid:14213). It is available at http://localhost:7474
   #### B-4　webブラウザで "http://localhost:7474" にアクセス
-    　start画面が出たらOK
+    　・start画面が出たらOK
   #### B-5 neo4jを停止
-    　下記コマンドを実行
-	　> cd /user/local/neo4j/bin/
-    　> ./neo4j stop
+    　・下記コマンドを実行する
+	　> cd /*ANATANODIRECTORY*/neo4j/bin/
+	　> ./neo4j stop
+  #### B-6 環境変数を設定
+    　・環境変数を追加する
+	　NEO4J_HOME=/*ANATANODIRECTORY*/neo4j
+  	　PATH=$PATH:$NEO4J_HOME/bin
+ 
 ***
-### C: DBにアクセスする一部を担うpythonスクリプト
+### C: DBにアクセスする一部を担うpythonスクリプトの実行環境
   #### C-1 自分の環境に合わせてpython(3以上)をインストール
   #### C-2 下記のパッケージをインストール
     　neo4j==4.4、lxml==5.0.0、cryptography==3.3.2、signxml==2.10.1
@@ -79,24 +74,22 @@
 </br>
 
 ## MaiMLViewer アプリケーションを実行する
-### 1: 環境変数を設定する（下記は実行時にのみ設定する場合）
-    export(poweshellの場合set) NEO4J_HOME=/usr/local/neo4j
-    export(poweshellの場合set) PATH=$PATH:$NEO4J_HOME/bin
-    export(poweshellの場合set) MAIML_TMP_DIR=/user/local/MaiMLViewerLocalRun/xmail-viewer/models/tmp
+### 1: アプリケーション実行時に必要な環境変数を設定する
+    MAIML_TMP_DIR=/*ANATANODIRECTORY*/MaiMLViewerLocalRun/xmail-viewer/models/tmp
 ### 2: neo4jの設定&起動
-    neo4j.confの設定を変更する
-    場所：/user/local/neo4j/conf/neo4j.conf
-    修正内容：
+    ・neo4j.confの設定を変更する
+    　場所：/*ANATANODIRECTORY*/neo4j/conf/neo4j.conf
+    　修正内容：
         dbms.security.auth_enabled=false
         dbms.connector.bolt.enabled=true
         dbms.connector.http.enabled=true
-    修正後neo4jを再起動：
+    ・修正後neo4jを再起動
         > neo4j restart
 ### 3: nodeの起動
-    下記コマンドを実行
-	　> cd /user/local/MaiMLViewerLocalRun/xmail-viewer/
+    ・下記コマンドを実行する
+	　> cd /*ANATANODIRECTORY*/MaiMLViewerLocalRun/xmail-viewer/
 	　> node /bin/www
-        →"/user/local/MaiMLViewerLocalRun/xmail-viewer/logs"が作成される
+        　　→"/*ANATANODIRECTORY*/MaiMLViewerLocalRun/xmail-viewer/logs"が作成される
 ### 4: webブラウザでアプリケーションにアクセス
-    URL："http://localhost:3000/"にアクセス
-    MaiMLViewerのリスト画面が表示される
+    ・URL："http://localhost:3000/"にアクセスする
+    ・MaiMLViewerのリスト画面が表示される
