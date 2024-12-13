@@ -31,15 +31,16 @@
   #### A-1 nodeをインストール
     　公式サイト(https://nodejs.org/)からダウンロードしてインストール
     　nodeとnpmがインストールされる
+      node、npmの実行ファイルにPATHが通っていなければそれぞれPATHを通す
   #### A-2 関連モジュールをインストール
     　"/user/local/MaiMLViewerLocalRun/xmail-viewer/"ディレクトリに、package.json、package-lock.jsonの２つのファイルが存在する
     　
-     下記コマンドを実行
+     下記コマンドを実行し、package.json、package-lock.jsonで指定したモジュールをインストールする
     　> cd /user/local/MaiMLViewerLocalRun/xmail-viewer/
     　> npm install
     　  →"/user/local/MaiMLViewerLocalRun/xmail-viewer/node_modules/"が作成される
   #### A-3　nodeを起動
-    　下記コマンドを実行
+    　下記コマンドを実行し、wwwファイルの設定内容でnodeを立ち上げる
 	　> cd /user/local/MaiMLViewerLocalRun/xmail-viewer/
 	　> node /bin/www
   #### A-4 webブラウザで "http://localhost:3000/" にアクセス
@@ -71,7 +72,7 @@
     　> ./neo4j stop
 ***
 ### C: DBにアクセスする一部を担うpythonスクリプト
-  #### C-1 自分の環境に合わせてpython3をインストール
+  #### C-1 自分の環境に合わせてpython(3以上)をインストール
   #### C-2 下記のパッケージをインストール
     　neo4j==4.4、lxml==5.0.0、cryptography==3.3.2、signxml==2.10.1
 </br>
@@ -87,12 +88,8 @@
     場所：/user/local/neo4j/conf/neo4j.conf
     修正内容：
         dbms.security.auth_enabled=false
-        dbms.directories.data=/usr/local/neo4j/data
-        dbms.directories.logs=/usr/local/neo4j/logs
         dbms.connector.bolt.enabled=true
-        dbms.connector.bolt.listen_address=:7687
         dbms.connector.http.enabled=true
-        dbms.connector.http.listen_address=:7474
     修正後neo4jを再起動：
         > neo4j restart
 ### 3: nodeの起動
