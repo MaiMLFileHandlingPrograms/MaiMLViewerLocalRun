@@ -107,9 +107,6 @@
 
 ### 2. 設定するもの
 #### 2-1. neo4j.confを修正
-        dbms.security.auth_enabled=false
-        dbms.connector.bolt.enabled=true
-        dbms.connector.http.enabled=true
 #### 2-2. 環境変数を設定
         JAVA_HOME, NEO4J_HOME, MAIML_TMP_DIR
 #### 2-3. pathを通す
