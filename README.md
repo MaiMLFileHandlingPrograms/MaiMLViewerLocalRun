@@ -69,7 +69,7 @@
 ### C: DBにアクセスする一部を担うpythonスクリプトの実行環境
   #### C-1 自分の環境に合わせてpython(3以上)をインストール
   #### C-2 下記のパッケージをインストール
-    　neo4j==4.4、lxml==5.0.0、cryptography==3.3.2、signxml==2.10.1
+    　neo4j==4.4、cryptography==3.3.2、lxml、signxml
 </br>
 </br>
 
