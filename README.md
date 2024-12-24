@@ -21,22 +21,25 @@
     　・公式サイト(https://nodejs.org/)からダウンロードしてインストールする
     　・nodeとnpmがインストールされる
       ・nodeとnpmの実行ファイルにPATHが通っていなければそれぞれPATHを通す
-  #### A-2 関連モジュールをインストール
-    　・"/user/local/MaiMLViewerLocalRun/xmail-viewer/"ディレクトリに、
-     　package.json、package-lock.jsonの２つのファイルが存在する
-    　
-     ・下記コマンドを実行し、package.json、package-lock.jsonで指定したモジュールをインストールする
-    　> cd /*ANATANODIRECTORY*/MaiMLViewerLocalRun/xmail-viewer/
-    　> npm install
-    　  →"/*ANATANODIRECTORY*/MaiMLViewerLocalRun/xmail-viewer/node_modules/"が作成される
-  #### A-3　nodeを起動
-    　・下記コマンドを実行し、nodeでwwwファイルを起動
-	　> cd /*ANATANODIRECTORY*/MaiMLViewerLocalRun/xmail-viewer/
-	　> node /bin/www
-  #### A-4 webブラウザで "http://localhost:3000/" にアクセス
-    　・接続できていればエラーになっていてもOK
-  #### A-5 nodeを停止
-	　Ctl+c
+  #### A-2 必要に応じて（企業内ネットワーク等でプロキシサーバ経由でインターネットにアクセスしている場合等）、プロキシの設定を行う
+      ・下記コマンドを実行
+         > cd /*ANATANODIRECTORY*/MaiMLViewerLocalRun/xmail-viewer/
+         > npm config set proxy <プロキシサーバー>:<ポート番号>
+  #### A-3 関連モジュールをインストール
+    　・"/user/local/MaiMLViewerLocalRun/xmail-viewer/"ディレクトリに、package.json、
+      　package-lock.jsonの２つのファイルが存在する
+      ・下記コマンドを実行し、package.json、package-lock.jsonで指定したモジュールをインストールする
+         > cd /*ANATANODIRECTORY*/MaiMLViewerLocalRun/xmail-viewer/
+         > npm install
+    　   →"/*ANATANODIRECTORY*/MaiMLViewerLocalRun/xmail-viewer/node_modules/"が作成される
+  #### A-4 nodeを起動
+     　・下記コマンドを実行し、nodeでwwwファイルを起動
+         > cd /*ANATANODIRECTORY*/MaiMLViewerLocalRun/xmail-viewer/
+         > node /bin/www
+  #### A-5 webブラウザで "http://localhost:3000/" にアクセス
+     　・接続できていればエラーになっていてもOK
+  #### A-6 nodeを停止
+       Ctl+c
 ***
 ### B: graph-db(DBサーバー) 
 下記をそれぞれ自分の環境に合わせてインストール、実行する
