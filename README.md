@@ -7,7 +7,7 @@
 #### B: graph-db(DBサーバー)
     openjdk 11, neo4j 4.4
 #### C: DBにアクセスする一部を担うpythonスクリプト
-    python3, python Packages(neo4j==4.4,lxml==5.0.0,cryptography==3.3.2,signxml==2.10.1)
+    python3, python Packages(neo4j==4.4,cryptography==3.3.2,lxml,signxml)
 
 </br>
 </br>
