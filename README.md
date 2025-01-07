@@ -3,10 +3,10 @@
 
 ## 構成とインストールが必要なもの
 #### A: xmail-viewer(アプリケーションサーバー)
-    node.js, node modules(package.json,package-lock.json)
+    node.js, node modules(package.json,package-lock.jsonで指定)
 #### B: graph-db(DBサーバー)
     openjdk 11, neo4j 4.4
-#### C: DBにアクセスする一部を担うpythonスクリプト
+#### C: DBアクセスの一部を担うpythonスクリプト
     python3, python Packages(neo4j==4.4,cryptography==3.3.2,lxml,signxml)
 
 </br>
@@ -26,7 +26,7 @@
          > cd /*ANATANODIRECTORY*/MaiMLViewerLocalRun/xmail-viewer/
          > npm config set proxy <プロキシサーバー>:<ポート番号>
   #### A-3 関連モジュールをインストール
-    　・"/user/local/MaiMLViewerLocalRun/xmail-viewer/"ディレクトリに、package.json、
+    　・"/*ANATANODIRECTORY*/MaiMLViewerLocalRun/xmail-viewer/"ディレクトリに、package.json、
       　package-lock.jsonの２つのファイルが存在する
       ・下記コマンドを実行し、package.json、package-lock.jsonで指定したモジュールをインストールする
          > cd /*ANATANODIRECTORY*/MaiMLViewerLocalRun/xmail-viewer/
