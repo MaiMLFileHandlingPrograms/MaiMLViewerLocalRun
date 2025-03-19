@@ -71,9 +71,9 @@
 ### B: graph-db(DBサーバー) 
 下記をそれぞれ自分の環境に合わせてインストール、実行する
   #### B-1 JDK 11をインストール
-  - それぞれの環境に合わせて、openjdk11.x.xxをインストール( https://learn.microsoft.com/ja-jp/java/openjdk/download#openjdk-11 )し、２つの環境変数を追加する
+  - それぞれの環境に合わせて、openjdk11.x.xxをインストール( https://learn.microsoft.com/ja-jp/java/openjdk/download#openjdk-11 )し、２つの環境変数を追加（インストールフォルダが"C:\\Program Files\\openjdk@11\\libexec\\openjdk.jdk\\Contents\\Home\\"の場合）する
     ```sh
-    > set JAVA_HOME=インストールしたディレクトリ（例：\ANATANODIRECTORY\openjdk@11\libexec\openjdk.jdk\Contents\Home）
+    > set JAVA_HOME=C:\Program Files\openjdk@11\libexec\openjdk.jdk\Contents\Home\
     > set path=%JAVA_HOME%\bin;%path%
     ```
   #### B-2 neo4j 4.4をインストール
@@ -132,9 +132,14 @@
      dbms.connector.bolt.enabled=true
      dbms.connector.http.enabled=true
     ```
+    もし、下記のように行の先頭に"#"が存在している場合は、"#"を消す
+    ```
+     #dbms.security.auth_enabled=false
+    ```
+    
 - 修正後neo4jを再起動
   ```sh
-  > neo4j restart
+  > neo4j console
   ```
 ### 3: nodeの起動
 - 下記コマンドを実行する
