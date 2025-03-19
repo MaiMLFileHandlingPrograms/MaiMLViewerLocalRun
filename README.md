@@ -53,7 +53,7 @@
 ### B: graph-db(DBサーバー) 
 下記をそれぞれ自分の環境に合わせてインストール、実行する
   #### B-1 JDK 11をインストール
-  - それぞれの環境に合わせて、openjdk11.x.xxをインストールし、２つの環境変数を追加する
+  - それぞれの環境に合わせて、openjdk11.x.xxをインストール( https://learn.microsoft.com/ja-jp/java/openjdk/download#openjdk-11 )し、２つの環境変数を追加する
     ```
     JAVA_HOME=インストールしたディレクトリ（例：/ANATANODIRECTORY/openjdk@11/libexec/openjdk.jdk/Contents/Home）
     PATH=$JAVA_HOME/bin:$PATH
