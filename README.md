@@ -40,7 +40,7 @@
   - 下記コマンドを実行し、nodeでwwwファイルを起動
     ```sh
     > cd /ANATANODIRECTORY/MaiMLViewerLocalRun/xmail-viewer/
-    > node /bin/www
+    > node ./bin/www
     ```
   #### A-5 webブラウザで "http://localhost:3000/" にアクセス
   - 接続できていればエラーになっていてもOK
