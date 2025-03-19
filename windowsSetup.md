@@ -14,7 +14,7 @@
 
 ## 環境構築手順
 ### 準備: GitHubからコード一式をローカル環境にダウンロード
-  - 例として、ローカル環境のフォルダを"\*ANATANODIRECTORY*\MaiMLViewerLocalRun\"とする
+  - 例として、ローカル環境のフォルダを"\\*ANATANODIRECTORY*\MaiMLViewerLocalRun\\"とする
 ***
 ### A: xmail-viewer(アプリケーションサーバー)
   #### A-1 nodeをインストール
@@ -32,11 +32,11 @@
   ```
   のようにバージョンが表示されれば，PATHは通っている <br/>
   PATHが通ってない場合，下記のようにPATHを通す <br/>
-  1. nodeのPATH（インストールフォルダが"C:\Program Files\nodejs\"の場合）を通す
+  1. nodeのPATH（インストールフォルダが"C:\\Program Files\\nodejs\\"の場合）を通す
   ```sh
     > set path=%path%;C:\Program Files\nodejs\
   ```
-  2. npmのPATH（インストールフォルダが"C:\Users\anata\AppData\Roaming\npm"の場合）を通す
+  2. npmのPATH（インストールフォルダが"C:\\Users\\anata\\AppData\\Roaming\\npm"の場合）を通す
   ```sh
     > set path=%path%;C:\Users\anata\AppData\Roaming\npm
   ```
@@ -47,14 +47,14 @@
     > npm config set proxy <プロキシサーバー>:<ポート番号>
     ```
   #### A-3 関連モジュールをインストール
-  - "\*ANATANODIRECTORY*\MaiMLViewerLocalRun\xmail-viewer\"ディレクトリに、package.json、
+  - "\\*ANATANODIRECTORY*\\MaiMLViewerLocalRun\\xmail-viewer\\"ディレクトリに、package.json、
     package-lock.jsonの２つのファイルが存在する
   - 下記コマンドを実行し、package.json、package-lock.jsonで指定したモジュールをインストールする
     ```sh
     > cd \ANATANODIRECTORY\MaiMLViewerLocalRun\xmail-viewer\
     > npm install
     ```
-    　   →"\*ANATANODIRECTORY*\MaiMLViewerLocalRun\xmail-viewer\node_modules\"ディレクトリが作成される
+    　   →"\\*ANATANODIRECTORY*\\MaiMLViewerLocalRun\\xmail-viewer\\node_modules\\"ディレクトリが作成される
   #### A-4 nodeを起動
   - 下記コマンドを実行し、nodeでwwwファイルを起動
     ```sh
@@ -80,7 +80,7 @@
   #### B-2 neo4j 4.4をインストール
   - 公式サイト(https://neo4j.com/deployment-center/#enterprise) からneo4j 4.4-community版をダウンロードする
   - ダウンロードしたneo4j-community-4.4.xx-unix.tar.gzを解凍し、
-    任意のディレクトリ（例えば、\*ANATANODIRECTORY*\neo4j\）におく
+    任意のディレクトリ（例えば、\\*ANATANODIRECTORY*\\neo4j\\）におく
   #### B-3 環境変数を設定
   - 環境変数を追加する
     ```
@@ -126,7 +126,7 @@ MAIML_TMP_DIR=\ANATANODIRECTORY\MaiMLViewerLocalRun\xmail-viewer\models\tmp
 ### 2: neo4jの設定&起動
 - neo4j.confの設定を変更する
   - neo4j.confの場所： <br/>
-    \*ANATANODIRECTORY*\neo4j\conf\neo4j.conf
+    \\*ANATANODIRECTORY*\\neo4j\\conf\\neo4j.conf
   - 修正内容：
     ```
      dbms.security.auth_enabled=false
@@ -143,7 +143,7 @@ MAIML_TMP_DIR=\ANATANODIRECTORY\MaiMLViewerLocalRun\xmail-viewer\models\tmp
   > cd \ANATANODIRECTORY\MaiMLViewerLocalRun\xmail-viewer\
   > node bin\www
   ```
-  　　→"\*ANATANODIRECTORY*\MaiMLViewerLocalRun\xmail-viewer\logs"が作成される
+  　　→"\\*ANATANODIRECTORY*\\MaiMLViewerLocalRun\\xmail-viewer\\logs"が作成される
 ### 4: webブラウザでアプリケーションにアクセス
 - URL："http://localhost:3000/" にアクセスする
 - MaiMLViewerのリスト画面が表示される
@@ -173,5 +173,5 @@ MAIML_TMP_DIR=\ANATANODIRECTORY\MaiMLViewerLocalRun\xmail-viewer\models\tmp
 
 ### 3. アプリケーション実行方法
 #### 3-1. neo4jを起動
-#### 3-2. nodeで \MaiMLViewerLocalRun\xmail-viewer\bin\www を実行
+#### 3-2. nodeで \\MaiMLViewerLocalRun\\xmail-viewer\\bin\\www を実行
 #### 3-3. webブラウザで "http://localhost:3000/" にアクセス
