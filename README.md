@@ -1,5 +1,5 @@
 # MaiMLViewerLocalRun
-# ローカル環境でdockerを使わずにMaiMLViewerを開発＆実行する環境の構築( windows編 )
+# ローカル環境でdockerを使わずにMaiMLViewerを開発＆実行する環境の構築
 
 ## 構成とインストールが必要なもの
 #### A: xmail-viewer(アプリケーションサーバー)
