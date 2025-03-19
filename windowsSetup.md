@@ -120,8 +120,8 @@
 
 ## MaiMLViewer アプリケーションを実行する
 ### 1: アプリケーション実行時に必要な環境変数を設定する
-```
-MAIML_TMP_DIR=\ANATANODIRECTORY\MaiMLViewerLocalRun\xmail-viewer\models\tmp
+```sh
+> set MAIML_TMP_DIR=\ANATANODIRECTORY\MaiMLViewerLocalRun\xmail-viewer\models\tmp
 ````
 ### 2: neo4jの設定&起動
 - neo4j.confの設定を変更する
