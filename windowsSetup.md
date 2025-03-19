@@ -21,8 +21,8 @@
   - 公式サイト(https://nodejs.org/) からダウンロードしてインストールする
   - nodeとnpmがインストールされる
   - nodeとnpmの実行ファイルにPATHが通っていなければそれぞれPATHを通す
-  <br/>
-  下記コマンドを実行し，
+    
+  下記コマンドを実行し、バージョンが表示されればPATHは通っている
 
   ```sh
   > node --version
@@ -30,8 +30,7 @@
   > npm --version
    10.9.2
   ```
-  のようにバージョンが表示されれば，PATHは通っている <br/>
-  PATHが通ってない場合，下記のようにPATHを通す <br/>
+  PATHが通ってない場合、下記のようにPATHを通す <br/>
   1. nodeのPATH（インストールフォルダが"C:\\Program Files\\nodejs\\"の場合）を通す
   ```sh
     > set path=%path%;C:\Program Files\nodejs\
