@@ -13,10 +13,14 @@
 </br>
 
 ## 環境構築手順
-### 準備: GitHubからコード一式をローカル環境にダウンロード
+### 準備: 
+#### GitHubからコード一式をローカル環境にダウンロードし解凍する
   - 例として、ローカル環境のフォルダを"\\*ANATANODIRECTORY*\MaiMLViewerLocalRun\\"とする
+#### コマンドプロンプトの起動方法
+  - windowsの検索窓に「cmd」と入力し、コマンドプロンプトを選択する
+    
 ***
-### A: xmail-viewer(アプリケーションサーバー)
+### A: xmail-viewer(アプリケーションサーバー)の構築
   #### A-1 nodeをインストール
   - 公式サイト(https://nodejs.org/) から、Windowsインストーラ形式(.msi)をダウンロード＆インストールする
   - nodeとnpmがインストールされる
@@ -57,7 +61,7 @@
       ctl+c
     ```
 ***
-### B: graph-db(DBサーバー) 
+### B: graph-db(DBサーバー) の構築
 下記をそれぞれ自分の環境に合わせてインストール、実行する
   #### B-1 JDK 11をインストール
   - サイト( https://learn.microsoft.com/ja-jp/java/openjdk/download#openjdk-11 )から、Windowsインストーラ形式(.msi)をダウンロードする
@@ -102,9 +106,9 @@
 ## MaiMLViewer アプリケーションを実行する
 ### 1: アプリケーション実行時に必要な環境変数を設定する
 - コマンドプロンプト画面を開き、下記コマンドを実行する
-```sh
-> set MAIML_TMP_DIR=\ANATANODIRECTORY\MaiMLViewerLocalRun\xmail-viewer\models\tmp
-````
+  ```sh
+  > set MAIML_TMP_DIR=\ANATANODIRECTORY\MaiMLViewerLocalRun\xmail-viewer\models\tmp
+  ````
 ### 2: neo4jの設定&起動
 - neo4j.confの設定を変更する
   - neo4j.confの場所： <br/>
@@ -122,9 +126,9 @@
     
 - 修正後neo4jを起動
   - コマンドプロンプト画面を開き、下記コマンドを実行する 
-  ```sh
-  > \ANATANODIRECTORY\neo4j\bin\neo4j console　(もしくは　> \ANATANODIRECTORY\neo4j\bin\neo4j start)
-  ```
+    ```sh
+    > \ANATANODIRECTORY\neo4j\bin\neo4j console　(もしくは　> \ANATANODIRECTORY\neo4j\bin\neo4j start)
+    ```
 ### 3: nodeの起動
 - 新たなコマンドプロンプト画面を開き、下記コマンドを実行する
   ```sh
@@ -149,19 +153,13 @@
 
 ### 2. 設定するもの
 #### 2-1. neo4j.confを修正
-#### 2-2. 環境変数を設定
-```
- JAVA_HOME, NEO4J_HOME, MAIML_TMP_DIR
-```
-#### 2-3. 実行ファイルにpathを通す
-```
- node, npm, java, neo4j, python
-```
+#### 2-2. 環境変数（MAIML_TMP_DIR）を設定
+
 <br/>
 
 ### 3. アプリケーション実行方法
 #### 3-1. コマンドプロンプト画面で、neo4jを起動
-#### 3-2. 新たなコマンドプロンプト画面で、nodeで \\MaiMLViewerLocalRun\\xmail-viewer\\bin\\www を実行
+#### 3-2. 新たなコマンドプロンプト画面を開き、nodeで \\MaiMLViewerLocalRun\\xmail-viewer\\bin\\www を起動
 #### 3-3. webブラウザで "http://localhost:3000/" にアクセス
 
 </br>
@@ -169,7 +167,7 @@
 
 ## 実行PATHが通っていない時の対処法
 ### nodeとnpmの実行ファイル
-  PATHが通ってない場合、コマンドプロンプト画面から下記のコマンドを実行し、PATHを通す <br/>
+  コマンドプロンプト画面から下記のコマンドを実行し、PATHを通す <br/>
   1. nodeのPATH（インストールフォルダが"C:\\Program Files\\nodejs\\"の場合）を通す
   ```sh
     > set path=%path%;C:\Program Files\nodejs\
@@ -179,18 +177,26 @@
     > set path=%path%;C:\Users\anata\AppData\Roaming\npm
   ```
 ### openjdk 11
-  ２つの環境変数を追加（インストールフォルダが"C:\\Program Files\\openjdk@11\\libexec\\openjdk.jdk\\Contents\\Home\\"の場合）する
+  コマンドプロンプト画面から下記のコマンドを実行し、PATHを通す <br/>
+  1. 環境変数「JAVA_HOME」を追加（インストールフォルダが"C:\\Program Files\\openjdk@11\\libexec\\openjdk.jdk\\Contents\\Home\\"の場合）する
   ```sh
     > set JAVA_HOME=C:\Program Files\openjdk@11\libexec\openjdk.jdk\Contents\Home\
+  ```
+  2. 実行PATHを追加する
+  ```sh
     > set path=%JAVA_HOME%\bin;%path%
   ```
-### neo4j（パスを通し、実行時のコマンドを簡略化する場合）
-  - ２つの環境変数を追加（インストールフォルダが"\\ANATANODIRECTORY\\neo4j"の場合）する
+### neo4j（PATHを通し、実行時のコマンドを簡略化する場合）
+  コマンドプロンプト画面から下記のコマンドを実行し、PATHを通す <br/>
+  1. 環境変数「NEO4J_HOME」を追加（インストールフォルダが"\\ANATANODIRECTORY\\neo4j"の場合）する
   ```sh
     > set NEO4J_HOME=\ANATANODIRECTORY\neo4j
+  ```
+  2. 実行PATHを追加する
+  ```sh
     > set path=%path%;%NEO4J_HOME%\bin
   ```
-  - 実行コマンド
+  3. PATHを通すと、neo4jの実行コマンドは下記となる
   ```sh
     > neo4j console　(もしくは　> neo4j start)
   ```
