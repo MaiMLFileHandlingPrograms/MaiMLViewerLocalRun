@@ -37,6 +37,10 @@
     ```sh
     > cd \ANATANODIRECTORY\MaiMLViewerLocalRun\xmail-viewer\
     > npm config set proxy <プロキシサーバー>:<ポート番号>
+    > npm config set https-proxy <プロキシサーバー>:<ポート番号>
+    	例）
+    	npm config set proxy http://proxy.example.com:8080
+    	npm config set https-proxy http://proxy.example.com:8080
     ```
   #### A-3 関連モジュールをインストール
   - "\\*ANATANODIRECTORY*\\MaiMLViewerLocalRun\\xmail-viewer\\"ディレクトリに、package.json、
