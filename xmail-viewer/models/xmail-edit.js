@@ -41,8 +41,8 @@ exports.upload = async function(filename, xmail) {
 	var idNx = '';
 	var graphJson = '[0]';
 	var uploadResult = false;
-	const pythonapp = path.join(path_to_scripts, 'xmail_import.py');
-
+	//const pythonapp = path.join(path_to_scripts, 'xmail_import.py');
+	
 	// 引数に指定されたファイルを一時ファイルとして保存する
 	let tmpfile = path.join(__dirname, 'tmp', filename);
 	logger.app.debug(C_MODEL + 'filename:' + tmpfile);
@@ -63,6 +63,25 @@ exports.upload = async function(filename, xmail) {
 		throw err;
 	}
 
+	// 2025/7/8 edit パスに空白文字を含む場合、windows環境でエラーになるバグの修正
+	// ファイルパスやオプションはすべてクォート（"）で囲む
+	const pythonScript = path.join(path_to_scripts, 'xmail_import.py');
+	const pythonScriptPath = path.join(__dirname, 'python', pythonScript);
+	const quotedPython = `"${pythonScriptPath}"`;
+	const quotedTmpfile = `"${tmpfile}"`;
+	const quotedHost = `"${graphDb}"`;
+
+	// xmail_importを実行する
+	try {
+		let cmd = `${quotedPython} --host ${quotedHost} ${quotedTmpfile}`;
+
+		cypher1 = cmdExecute(cmd);
+	} catch (err) {
+		logger.app.error(C_MODEL + err.name + ':' + err.message);
+		throw err;
+	}
+
+	/*
 	// xmail_importを実行する
 	try {
 		var cmd = '';
@@ -82,6 +101,7 @@ exports.upload = async function(filename, xmail) {
 		logger.app.error(C_MODEL + err.name + ':' + err.message);
 		throw err;
 	}
+	*/
 
 	
 	return graphJson;
